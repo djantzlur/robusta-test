@@ -1,0 +1,6 @@
+playbookRepos:
+  - repo: https://github.com/djantzlur/robusta-test.git
+    name: my-custom-playbooks
+    branch: main  # or specify another branch
+    playbookDir: playbooks
+
