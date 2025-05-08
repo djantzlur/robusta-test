@@ -8,8 +8,9 @@ def my_custom_action(event: PodChangeEvent):
     #     print(o)
     #     print('---')
     # print('add')
-    podName=event.obj.name
-    podNamespace=event.obj.namespace
+    meta=event.obj.metadata
+    podName=meta.name
+    podNamespace=meta.namespace
     message=json.dumps({'message':f'pod {podName} in {podNamespace} updated - {event.response}'})
     event.add_enrichment([JsonBlock(message)])
     
