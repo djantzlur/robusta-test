@@ -9,7 +9,7 @@ def my_custom_action(event: PodChangeEvent):
     print('add')
     event.add_enrichment([JsonBlock('{"message":"Hello Json Custom Action"}')])
     
-    res = f'{event.name} - {event.namespace} - {event.operation} - {event.labels}'
+    res = f'{event.filtered_diffs} - {event.description} - {event.operation}'
     print(f"Custom Action - {res}")
 
     
