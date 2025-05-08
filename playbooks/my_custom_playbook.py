@@ -17,7 +17,7 @@ def my_custom_action(event: PodChangeEvent):
     res = f'{event.filtered_diffs} - {event.description} - {event.operation}'
     print(f"Custom Action - {res}")
 
-    for o in event.obj:
+    for o in event.obj.__dict__:
         print(o)
         print('---')
     
