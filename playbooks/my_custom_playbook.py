@@ -12,7 +12,7 @@ def my_custom_action(event: PodChangeEvent):
     podName=meta.name
     podNamespace=meta.namespace
     if podNamespace.startswith("robusta") and podNamespace.endswith("test"):
-        message=json.dumps({'message':f'pod {podName} in {podNamespace} updated - {event.response}'})
+        message=json.dumps({'message':f'pod {podName} in {podNamespace} updated - {event.response}','subject':f'{podNamespace}/pod/{podName}'})
         event.add_enrichment([JsonBlock(message)])
     
     # res = f'{event.filtered_diffs} - {event.description} - {event.operation}'
